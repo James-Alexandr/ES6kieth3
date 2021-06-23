@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function App() {
-  const [inputText, setInputText] = useState("");
+  const [userInput, setInputText] = useState("");
   const [items, setItems] = useState([]);
 
   function handleChange(event) {
@@ -11,7 +11,7 @@ function App() {
 
   function addItem() {
     setItems((prevItems) => {
-      return [...prevItems, inputText];
+      return [...prevItems, userInput];
     });
     setInputText("");
   }
@@ -22,7 +22,7 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <div className="form">
-        <input onChange={handleChange} type="text" value={inputText} />
+        <input onChange={handleChange} type="text" value={userInput} />
         <button onClick={addItem}>
           <span>Add</span>
         </button>
